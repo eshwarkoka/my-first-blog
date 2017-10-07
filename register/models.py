@@ -25,8 +25,8 @@ class StudentDetails(models.Model):
     		('IT','Information Technology'),
     		('ECE','Electrical & Electronics Engineering')
     	)
-	branchname = models.CharField(max_length=3, choices=branch)
-	section = models.IntegerField()
+	#branchname = models.CharField(max_length=3, choices=branch)
+	section = models.IntegerField(default=0)
 #class StudentDetails(models.Model):
     #author = models.ForeignKey('auth.User')
 #    firstname = models.CharField(max_length=30)
