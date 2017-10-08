@@ -1,15 +1,11 @@
-<html>
-    <title>Main page</title>
-    <body>
-    	<center><h1>Welcome to elective system</h1></center>
-    	<input type="text" name="email" placeholder="Enter your email Id"/><br>
-    	<input type="button" name="login" value="Login"/><br>
+{% extends 'register/base.html' %}
+
+{% block content %}
     	{% for post in posts %}
     		<div>
         		<p>published: {{ post.published_date }}</p>
-        		<h1><a href="">{{ post.title }}</a></h1>
+        		<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
         		<p>{{ post.text|linebreaksbr }}</p>
     		</div>
 		{% endfor %}
-    </body>
-</html>
+{% endblock %}
